@@ -1,0 +1,31 @@
+{
+  "name": "login-api",
+  "version": "1.0.0",
+  "description": "API de autenticação com JWT, SQLite nativo e página de login",
+  "private": true,
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build:client": "tsc -p tsconfig.client.json",
+    "build:server": "tsc -p tsconfig.json",
+    "build": "npm run build:client && npm run build:server",
+    "dev": "npm run build:client && tsx watch --disable-warning=ExperimentalWarning src/server.ts",
+    "start": "node --disable-warning=ExperimentalWarning dist/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
